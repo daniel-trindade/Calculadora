@@ -3,10 +3,12 @@ var res;
 function insert(char){
 
   var current = document.getElementById("current-operation").innerHTML;
+  var lastEnter = current.slice(-1);
 
   if(char == '+' || char == '-' || char == '*' || char == '/'){
-    if(current == '+' || current == '-' || current == '*' || current == '/'){
-      current = char;
+    if(lastEnter == '+' || lastEnter == '-' || lastEnter == '*' || lastEnter == '/'){
+      backSpace()
+      current = document.getElementById("current-operation").innerHTML;
     }
     document.getElementById("current-operation").innerHTML = current + char;
   }else{
